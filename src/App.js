@@ -24,8 +24,8 @@ class App extends React.Component {
     })
   }
 
-  componentDidUpdate(){
-    console.log(this.state)
+  exitDisplay = () => {
+    this.setState({display: false})
   }
 
   render() {
@@ -33,7 +33,7 @@ class App extends React.Component {
       <div className="app">
         {!this.state.display ? 
         <ReviewContainer reviews={this.state.reviews} handleSelection={this.handleSelection}/> :
-        <SelectedReview review={this.state.selectedReview}/>
+        <SelectedReview review={this.state.selectedReview} comment={"no comment"} exitDisplay={this.exitDisplay}/>
         }
       </div>
     );
