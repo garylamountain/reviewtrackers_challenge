@@ -52,13 +52,33 @@ class App extends React.Component {
     })
   }
 
+  returnStars(int){
+    let stars = '';
+    for(let i = 0; i < int; i++){
+      stars += '⭐';
+    }
+    return stars;
+  }
+
   render() {
     return (
       <div className="app">
-        <NavBar/>
+        <NavBar exitDisplay={this.exitDisplay} />
         {!this.state.display ? 
-        <ReviewContainer reviews={this.state.reviews} handleSelection={this.handleSelection}/> :
-        <SelectedReview review={this.state.selectedReview} response={this.state.selectedReview.response} responder={this.state.selectedReview.responder} exitDisplay={this.exitDisplay} submitResponse={this.submitResponse}/>
+        <ReviewContainer 
+          reviews={this.state.reviews} 
+          handleSelection={this.handleSelection}
+          returnStars={this.returnStars}
+        /> 
+        :
+        <SelectedReview 
+          review={this.state.selectedReview} 
+          response={this.state.selectedReview.response} 
+          responder={this.state.selectedReview.responder} 
+          exitDisplay={this.exitDisplay} 
+          submitResponse={this.submitResponse}
+          returnStars={this.returnStars}
+        />
         }
       </div>
     );

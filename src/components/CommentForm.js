@@ -37,13 +37,30 @@ class CommentForm extends React.Component {
                 <form>
                     <div class="form-group">
                         <label>Your Name</label>
-                        <input type="text" name="responder" class="form-control" placeholder="John Doe" value={this.state.responseObj.responder.value} onChange={this.handleChange}/>
+                        <input 
+                            type="text" 
+                            name="responder" 
+                            class="form-control" 
+                            value={this.state.responseObj.responder.value} 
+                            onChange={this.handleChange}
+                        />
                     </div>
                     <div class="form-group">
                         <label>Comment</label>
-                        <textarea class="form-control" name="response" rows="3" value={this.state.responseObj.response.value} onChange={this.handleChange}></textarea>
+                        <textarea
+                            name="response" 
+                            class="form-control" 
+                            rows="3" 
+                            value={this.state.responseObj.response.value} 
+                            onChange={this.handleChange}
+                        />
                     </div>
-                    <button type="button" className="btn btn-primary" onClick={()=>this.props.submitResponse(this.state.responseObj)}>Submit</button>
+                    <button 
+                        type="button" 
+                        className="btn btn-primary" 
+                        onClick={()=>this.props.submitResponse(this.state.responseObj)}>
+                        Submit
+                    </button>
                 </form>
             </div>
         )

@@ -13,7 +13,8 @@ const ReviewContainer = (props) => {
                     published_at={review.published_at}
                     rating={review.rating}
                     content={review.content}
-                    handleSelection={props.handleSelection}/>})}
+                    handleSelection={props.handleSelection}
+                    returnStars={props.returnStars}/>})}
 	        </div>
         </div>
 	)
