@@ -34,8 +34,8 @@ class SelectedReview extends React.Component {
             <div className="card" style={{margin: "3%", padding: "2%"}}>
                     <h5 className="card-title">{this.props.review.place}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{this.props.returnStars(this.props.review.rating)}</h6>
-                    <p className="card-text">{this.props.review.content}</p>
-                    {this.props.review.author} - {month}/{day}/{year}
+                    <p className="card-text text-muted">{this.props.review.content}</p>
+                    <div className="card-text">{this.props.review.author}   <small className="text-muted">{month}/{day}/{year}</small></div>
             </div>
             {this.props.response ? 
             <div className="card" style={{margin: "3%", padding: "2%", backgroundColor: "white", width: "33%"}}>
