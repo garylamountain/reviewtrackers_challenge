@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Review from '../components/Review';
 
 const ReviewContainer = (props) => {

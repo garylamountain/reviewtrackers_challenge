@@ -37,6 +37,7 @@ class SelectedReview extends React.Component {
                     <p className="card-text text-muted">{this.props.review.content}</p>
                     <div className="card-text">{this.props.review.author}   <small className="text-muted">{month}/{day}/{year}</small></div>
             </div>
+            {/* 
             {this.props.response ? 
             <div className="card" style={{margin: "3%", padding: "2%", backgroundColor: "white", width: "33%"}}>
                 <span 
@@ -52,8 +53,9 @@ class SelectedReview extends React.Component {
                         : 
                         <h6 className="card-subtitle mb-2 text-muted">-Anonymous</h6>}
                 </div>
-            </div>
-            // <Comment response={props.response} responder={props.responder} submitResponse={props.submitResponse}/>
+            </div> */}
+            { this.props.response ? 
+            <Comment response={this.props.response} responder={this.props.responder} submitResponse={this.props.submitResponse}/>
             : 
             <CommentForm responder={this.state.defaultResponder} response={this.state.defaultResponse} submitResponse={this.props.submitResponse}/>
             }
