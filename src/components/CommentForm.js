@@ -7,14 +7,14 @@ class CommentForm extends React.Component {
         this.state = {
             responseObj: {
                 responder: {
-                  value: ''
+                  value: props.responder
                 },
                 response: {
-                  value: ''
+                  value: props.response
                 }
             }
         }
-      }
+    }
 
     handleChange = event => {
         const name = event.target.name;

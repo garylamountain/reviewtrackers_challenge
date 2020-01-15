@@ -19,6 +19,10 @@ class App extends React.Component {
     this.setState({reviews: resReviews});
   }
 
+  componentDidUpdate(){
+    console.log(this.state)
+  }
+
   handleSelection = review => {
     this.setState({
       selectedReview: review,
@@ -31,6 +35,7 @@ class App extends React.Component {
   }
 
   submitResponse = submission => {
+    console.log(submission)
     const response = submission.response.value;
     const responder = submission.responder.value;
     this.setState(prevState => {
