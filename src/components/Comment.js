@@ -4,7 +4,7 @@ import React from 'react';
 const Comment = (props) => {
   return (
     <div>
-        {props.comment}
+        {props.response}
     </div>
   )
 }

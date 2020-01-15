@@ -9,6 +9,7 @@ const Review = (props) => {
   var month = date.getMonth() + 1;
   var day = date.getDate();
   var year = date.getFullYear();
+  console.log("props.response", props.response)
   return (
     <div>
         <div style={{cursor: "pointer"}} onClick={props.exitDisplay}>back</div>
@@ -18,10 +19,11 @@ const Review = (props) => {
                 <p className="card-text">{props.review.content}</p>
                 {props.review.author} - {month}/{day}/{year}
         </div>
-        {props.comment === "no comment" ? 
-        <CommentForm />
+        {props.response ? 
+        <Comment response={props.response}/>
         : 
-        <Comment comment={props.comment}/>}
+        <CommentForm submitResponse={props.submitResponse}/>
+        }
     </div>
   )
 }
