@@ -30,7 +30,7 @@ class SelectedReview extends React.Component {
   
     return (
         <div>
-            <span style={{cursor: "pointer"}} onClick={this.props.exitDisplay}>back</span>
+            <span className="back-button" onClick={this.props.exitDisplay}></span>
             <div className="card" style={{margin: "3%", padding: "2%"}}>
                     <h5 className="card-title">{this.props.review.place}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">{this.props.returnStars(this.props.review.rating)}</h6>

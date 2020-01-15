@@ -44,3 +44,18 @@ code {
 .comment-body {
   margin: 5%;
 }
+
+.back-button::after {
+  cursor: pointer;
+  padding: 1%;
+  content: ' \2715';
+  font-size: 35px;
+}
+
+.edit-button::after {
+  cursor: pointer;
+  float: right;
+  padding: 1%;
+  content: ' \270E';
+  font-size: 35px;
+}

@@ -46,11 +46,11 @@ class Comment extends React.Component {
     return (
       <div className="card" style={{margin: "3%", padding: "2%", backgroundColor: "white", width: "50%"}}>
         {this.state.editing ? 
-        <div className="comment">
+        <div className="comment-form">
             <div className="comment-body">
             <form>
                     <div class="form-group">
-                        <label>Your Name</label>
+                        <label>Name</label>
                         <input 
                             type="text" 
                             name="responder" 
@@ -80,7 +80,7 @@ class Comment extends React.Component {
         </div>
         : 
         <div className="comment">
-          <span style={{cursor: "pointer"}} onClick={this.handleClick}>...</span>
+          <span className="edit-button" style={{cursor: "pointer"}} onClick={this.handleClick}></span>
             <div className="comment-body">
                     <h5 className="card-title">{this.props.response}</h5>
                     {this.props.responder ? <h6 className="card-subtitle mb-2 text-muted">-{this.props.responder}</h6> 
