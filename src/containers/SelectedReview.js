@@ -1,9 +1,8 @@
 import React from 'react';
-import CommentForm from './CommentForm';
-import Comment from './Comment';
+import CommentForm from '../components/CommentForm';
+import Comment from '../components/Comment';
 import { render } from '@testing-library/react';
 
-// const SelectedReview = (props) => {
 class SelectedReview extends React.Component {
 
     constructor(props){
@@ -23,6 +22,7 @@ class SelectedReview extends React.Component {
     }
 
   render(){
+      
     let date = new Date(this.props.review.published_at);
     let month = date.getMonth() + 1;
     let day = date.getDate();
@@ -37,23 +37,6 @@ class SelectedReview extends React.Component {
                     <p className="card-text text-muted">{this.props.review.content}</p>
                     <div className="card-text">{this.props.review.author}   <small className="text-muted">{month}/{day}/{year}</small></div>
             </div>
-            {/* 
-            {this.props.response ? 
-            <div className="card" style={{margin: "3%", padding: "2%", backgroundColor: "white", width: "33%"}}>
-                <span 
-                    style={{cursor: "pointer"}} 
-                    // onClick={()=>props.submitResponse({responder: {value: ''}, response: {value: ''}})}
-                    onClick={this.handleClick}
-                >
-                ...
-                </span>
-                <div className="comment-body">
-                        <h5 className="card-title">{this.props.response}</h5>
-                        {this.props.responder ? <h6 className="card-subtitle mb-2 text-muted">-{this.props.responder}</h6> 
-                        : 
-                        <h6 className="card-subtitle mb-2 text-muted">-Anonymous</h6>}
-                </div>
-            </div> */}
             { this.props.response ? 
             <Comment response={this.props.response} responder={this.props.responder} submitResponse={this.props.submitResponse}/>
             : 

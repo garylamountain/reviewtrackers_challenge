@@ -39,7 +39,7 @@ class Comment extends React.Component {
 
   handleSave = () => {
     this.props.submitResponse(this.state.responseObj);
-    this.setState({editing: false})
+    this.setState({editing: false});
   }
 
   render(){

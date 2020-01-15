@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './components/Navbar';
 import ReviewContainer from './containers/ReviewContainer';
-import SelectedReview from './components/SelectedReview';
+import SelectedReview from './containers/SelectedReview';
 import json from './reviews.json';
 
 class App extends React.Component {
@@ -19,10 +19,6 @@ class App extends React.Component {
     this.setState({reviews: resReviews});
   }
 
-  componentDidUpdate(){
-    console.log(this.state)
-  }
-
   handleSelection = review => {
     this.setState({
       selectedReview: review,
@@ -35,7 +31,6 @@ class App extends React.Component {
   }
 
   submitResponse = submission => {
-    console.log(submission)
     const response = submission.response.value;
     const responder = submission.responder.value;
     this.setState(prevState => {
