@@ -13,10 +13,34 @@ code {
     monospace;
 }
 
+.navbar {
+  color: white;
+  font-weight: bold;
+  background-color: #3333ad;
+  height: 50px;
+}
+
 .card-body {
   cursor: pointer;
 }
 
 .review {
   background-color: white;
+  width: 95%;
+  margin: 2%;
+}
+
+.comment-form {
+  width: 50%;
+  margin: 2%;
+}
+
+.comment {
+  background-color: white;
+  width: 50%;
+  margin: 2%;
+}
+
+.comment-body {
+  margin: 5%;
 }

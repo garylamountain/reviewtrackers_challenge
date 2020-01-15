@@ -5,29 +5,45 @@ class CommentForm extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            response: this.props.comment
+            responseObj: {
+                responder: {
+                  value: ''
+                },
+                response: {
+                  value: ''
+                }
+            }
         }
       }
 
     handleChange = event => {
+        const name = event.target.name;
+        const value = event.target.value;
+      
         this.setState({
-            response: event.target.value
-        })
+          responseObj: {
+              ...this.state.responseObj,
+              [name]: {
+              ...this.state.responseObj[name],
+              value
+            }
+          }
+        });
     }
 
     render() {
         return (
-            <div>
+            <div className="comment-form">
                 <form>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Your Name</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Doe"/>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Comment</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value={this.state.response} onChange={this.handleChange}></textarea>
-                </div>
-                <button type="button" className="btn btn-primary" onClick={()=>this.props.submitResponse(this.state.response)}>Submit</button>
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="responder" class="form-control" placeholder="John Doe" value={this.state.responseObj.responder.value} onChange={this.handleChange}/>
+                    </div>
+                    <div class="form-group">
+                        <label>Comment</label>
+                        <textarea class="form-control" name="response" rows="3" value={this.state.responseObj.response.value} onChange={this.handleChange}></textarea>
+                    </div>
+                    <button type="button" className="btn btn-primary" onClick={()=>this.props.submitResponse(this.state.responseObj)}>Submit</button>
                 </form>
             </div>
         )
