@@ -7,7 +7,7 @@ const Review = (props) => {
   var month = date.getMonth() + 1;
   var day = date.getDate();
   var year = date.getFullYear();
-
+  console.log(props)
   return (
     <div className="card" style={{width: "18rem", margin: "3%"}}  id={props.review.id}>
         <div className="card-body" onClick={()=>props.handleSelection(review)}>

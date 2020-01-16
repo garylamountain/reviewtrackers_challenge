@@ -35,7 +35,7 @@ class CommentForm extends React.Component {
         return (
             <div className="comment-form">
                 <form>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label>Your Name</label>
                         <input 
                             type="text" 
@@ -45,7 +45,7 @@ class CommentForm extends React.Component {
                             onChange={this.handleChange}
                         />
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label>Comment</label>
                         <textarea
                             name="response" 

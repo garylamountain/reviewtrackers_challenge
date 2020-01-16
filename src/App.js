@@ -40,12 +40,8 @@ class App extends React.Component {
       let reviews = this.state.reviews;
       reviews.find(rev => {
         if(rev.id === selectedReview.id){
-          return rev.response = response;
-        }
-      })
-      reviews.find(rev => {
-        if(rev.id === selectedReview.id){
-          return rev.responder = responder;
+          rev.response = response;
+          rev.responder = responder;
         }
       })
       return { selectedReview, reviews };

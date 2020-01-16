@@ -6,15 +6,12 @@ const ReviewContainer = (props) => {
 	    <div className="container">
             <div className="row">
 	      { props.reviews.map((review) => {
-            return <Review review={review}
+            return <Review 
+                    review={review}
                     key={review.id}
-                    author={review.author}
-                    place={review.place}
-                    published_at={review.published_at}
-                    rating={review.rating}
-                    content={review.content}
                     handleSelection={props.handleSelection}
-                    returnStars={props.returnStars}/>})}
+                    returnStars={props.returnStars}
+                    />})}
 	        </div>
         </div>
 	)
