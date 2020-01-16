@@ -19,7 +19,10 @@ class App extends React.Component {
     this.setState({reviews: resReviews});
   }
 
+  
   handleSelection = review => {
+    //when user chooses a particular review,
+    //update the state to that review
     this.setState({
       selectedReview: review,
       display: true
@@ -27,12 +30,17 @@ class App extends React.Component {
   }
 
   exitDisplay = () => {
+    //close the single review view, return to the 'index' view
     this.setState({display: false});
   }
 
   submitResponse = submission => {
+    //submission is the object received from a newly submitted reply
+    //it will contain the reponse of the reply and the user who responded
     const response = submission.response.value;
     const responder = submission.responder.value;
+    //update the particular review in the state that
+    //the user replied to
     this.setState(prevState => {
       let selectedReview = Object.assign({}, prevState.selectedReview);
       selectedReview.response = response;  
@@ -48,6 +56,8 @@ class App extends React.Component {
     })
   }
 
+  //function for displaying 1-5 stars in place of
+  //the numerical rating provided to that restaurant
   returnStars(int){
     let stars = '';
     for(let i = 0; i < int; i++){
@@ -59,7 +69,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        {/* render the plain navbar */}
         <NavBar exitDisplay={this.exitDisplay} />
+        {/* if 'display' is false, show the view with all reviews
+        if 'display' is true, show the user's selected review */}
         {!this.state.display ? 
         <ReviewContainer 
           reviews={this.state.reviews} 

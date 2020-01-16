@@ -2,6 +2,9 @@ import React from 'react';
 
 class Comment extends React.Component {
 
+  //state holds the response to the review, 
+  //the user who wrote the response and whether or not
+  //the comment is being edited 
   constructor(props){
     super(props)
     this.state = {
@@ -17,10 +20,14 @@ class Comment extends React.Component {
     }
 }
 
+  //when user selects the editing button,
+  //change the view so that the response can be edited
   handleClick = () => {
     this.setState({editing: true});
   }
 
+  //keep changes made in the response form updated
+  //in the state
   handleChange = event => {
     const name = event.target.name;
     const value = event.target.value;
@@ -36,6 +43,8 @@ class Comment extends React.Component {
     });
   }
 
+  //when the response is to be submitted, use the same
+  //submit fn as in the commentform component
   handleSave = () => {
     this.props.submitResponse(this.state.responseObj);
     this.setState({editing: false});
@@ -44,6 +53,8 @@ class Comment extends React.Component {
   render(){
     return (
       <div className="card" style={{margin: "3%", padding: "2%", backgroundColor: "white", width: "50%"}}>
+        {/* if editing is true, provide a form for the user to edit the response and their name.
+        otherwise we need only render the comment */}
         {this.state.editing ? 
         <div className="comment-form">
             <div className="comment-body">
@@ -84,6 +95,7 @@ class Comment extends React.Component {
                     <h5 className="card-title">{this.props.response}</h5>
                     {this.props.responder ? <h6 className="card-subtitle mb-2 text-muted">-{this.props.responder}</h6> 
                     : 
+                    //if no user name is given in a response, render "Anonymous"
                     <h6 className="card-subtitle mb-2 text-muted">-Anonymous</h6>}
             </div>
         </div>
