@@ -1,68 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Review App
 
-## Available Scripts
+An app to view reviews of any number of establishments and responses to those reviews.
 
-In the project directory, you can run:
+## Setup & Run
 
-### `yarn start`
+After cloning the project, you should be able to simply run ```npm start``` and the app will run on http://localhost:3000/. Tests can be run using ```npm test App.test.js```, though they're a bit bare-bone.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Navigation
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The "homepage" of this app is the list view of all reviews. 
+![List View](https://i.imgur.com/OPLSTeJ.png)
+Simply select a review to view its full details. All reviews can have a direct response, and if there isn't a response yet, there will be a form provided to write one. This view can also be exited by clicking the black "X" at the top-left of the screen, or by clicking the "Reviews" logo in the navbar.
+![Full Details View](https://i.imgur.com/5vjAbZ2.png)
+After a response has been submitted, it will be displayed as a card. The response can be edited by selecting the pencil (edit) button.
+![Full Details with Response](https://i.imgur.com/ieaVxIs.png)
+When a response is being edited, a form similar to the new response form will be provided. Simply select the Save button and this edit will be persisted.
+![Full Details editing](https://i.imgur.com/9j4zJMP.png)
